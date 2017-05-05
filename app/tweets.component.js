@@ -32,7 +32,7 @@ System.register(['angular2/core', './tweet.service', './like.component'], functi
                 TweetsComponent = __decorate([
                     core_1.Component({
                         selector: 'tweets',
-                        template: "\n            <div class=\"media\" *ngFor=\"#t of tweets\">\n                <div class=\"media-left\">\n                    <img class=\"img-rounded\" src=\"{{ t.image }}\" />\n                </div>\n                <div class=\"media-body\">\n                    <h4 class=\"media-heading\">{{ t.username }}<span style=\"color: #ccc;\">{{ t.nickname }}</span></h4>\n                    <span>{{ t.tweet }}</span><br />\n                    <like></like>\n                </div>\n            </div>\n            ",
+                        template: "\n            <div class=\"media\" *ngFor=\"#t of tweets\">\n                <div class=\"media-left\">\n                    <img class=\"img-rounded\" src=\"{{ t.image }}\" />\n                </div>\n                <div class=\"media-body\">\n                    <h4 class=\"media-heading\">{{ t.username }}<span style=\"color: #ccc;\">{{ t.nickname }}</span></h4>\n                    <span>{{ t.tweet }}</span><br />\n                    <like [likes]=\"t.likes\"></like>\n                </div>\n            </div>\n            ",
                         providers: [tweet_service_1.TweetService],
                         directives: [like_component_1.LikeComponent]
                     }), 

@@ -27,6 +27,10 @@ System.register(['angular2/core'], function(exports_1, context_1) {
                     this.isLiked = !this.isLiked;
                     this.likes += this.isLiked ? 1 : -1;
                 };
+                __decorate([
+                    core_1.Input(), 
+                    __metadata('design:type', Object)
+                ], LikeComponent.prototype, "likes", void 0);
                 LikeComponent = __decorate([
                     core_1.Component({
                         selector: 'like',

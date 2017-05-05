@@ -13,7 +13,7 @@ import { LikeComponent } from './like.component'
                 <div class="media-body">
                     <h4 class="media-heading">{{ t.username }}<span style="color: #ccc;">{{ t.nickname }}</span></h4>
                     <span>{{ t.tweet }}</span><br />
-                    <like></like>
+                    <like [likes]="t.likes"></like>
                 </div>
             </div>
             `,
