@@ -1,4 +1,4 @@
-System.register(['angular2/core', './tweet.service'], function(exports_1, context_1) {
+System.register(['angular2/core', './tweet.service', './like.component'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['angular2/core', './tweet.service'], function(exports_1, contex
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, tweet_service_1;
+    var core_1, tweet_service_1, like_component_1;
     var TweetsComponent;
     return {
         setters:[
@@ -19,6 +19,9 @@ System.register(['angular2/core', './tweet.service'], function(exports_1, contex
             },
             function (tweet_service_1_1) {
                 tweet_service_1 = tweet_service_1_1;
+            },
+            function (like_component_1_1) {
+                like_component_1 = like_component_1_1;
             }],
         execute: function() {
             TweetsComponent = (function () {
@@ -29,8 +32,9 @@ System.register(['angular2/core', './tweet.service'], function(exports_1, contex
                 TweetsComponent = __decorate([
                     core_1.Component({
                         selector: 'tweets',
-                        template: "\n            <div class=\"media\" *ngFor=\"#t of tweets\">\n                <div class=\"media-left\">\n                    <img src=\"{{ t.image }}\" />\n                    <span>{{ t.username }}</span>\n                </div>\n            </div>\n            ",
-                        providers: [tweet_service_1.TweetService]
+                        template: "\n            <div class=\"media\" *ngFor=\"#t of tweets\">\n                <div class=\"media-left\">\n                    <img src=\"{{ t.image }}\" />\n                </div>\n                <div class=\"media-body\">\n                    <h4 class=\"media-heading\">{{ t.username }}<span style=\"color: #ccc;\">{{ t.nickname }}</span></h4>\n                    <span>{{ t.tweet }}</span><br />\n                    <like></like>\n                </div>\n            </div>\n            ",
+                        providers: [tweet_service_1.TweetService],
+                        directives: [like_component_1.LikeComponent]
                     }), 
                     __metadata('design:paramtypes', [tweet_service_1.TweetService])
                 ], TweetsComponent);
