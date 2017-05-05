@@ -8,7 +8,7 @@ import { LikeComponent } from './like.component'
             `
             <div class="media" *ngFor="#t of tweets">
                 <div class="media-left">
-                    <img src="{{ t.image }}" />
+                    <img class="img-rounded" src="{{ t.image }}" />
                 </div>
                 <div class="media-body">
                     <h4 class="media-heading">{{ t.username }}<span style="color: #ccc;">{{ t.nickname }}</span></h4>

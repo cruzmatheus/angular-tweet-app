@@ -20,11 +20,18 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             LikeComponent = (function () {
                 function LikeComponent() {
+                    this.isLiked = false;
+                    this.likes = 0;
                 }
+                LikeComponent.prototype.onClick = function () {
+                    this.isLiked = !this.isLiked;
+                    this.likes += this.isLiked ? 1 : -1;
+                };
                 LikeComponent = __decorate([
                     core_1.Component({
                         selector: 'like',
-                        template: '<i class="glyphicon glyphicon-heart"></i>'
+                        template: "\n            <i class=\"glyphicon glyphicon-heart heart-button\" \n            [style.color]=\"isLiked ? 'red' : '#ccc'\" (click)=\"onClick()\"></i>\n            <span class=\"number-of-likes\">{{ likes }}</span>\n            ",
+                        styles: ["\n            .heart-button {\n                cursor: pointer;\n                font-size: 1.5em;\n            }\n            .number-of-likes {\n                font-size: 1.5em;\n            }\n            "]
                     }), 
                     __metadata('design:paramtypes', [])
                 ], LikeComponent);

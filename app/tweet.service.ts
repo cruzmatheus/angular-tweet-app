@@ -5,7 +5,7 @@ export class TweetService {
                 username: 'Windward',
                 nickname: '@windwardstudios',
                 tweet: 'Looking for a better company reporting or docgen app?',
-                likes: 0,
+                likes: 1,
                 image: 'http://lorempixel.com/100/100/people'
             },
             {
